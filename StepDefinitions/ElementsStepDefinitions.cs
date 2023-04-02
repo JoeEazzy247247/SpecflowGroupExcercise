@@ -2,6 +2,9 @@ using BoDi;
 using Microsoft.Playwright;
 using NUnit.Framework;
 using SpecflowGroupExcercise.Pages;
+using SpecflowGroupExcercise.Utilities;
+using System;
+using TechTalk.SpecFlow;
 
 namespace SpecflowGroupExcercise.StepDefinitions
 {
@@ -50,6 +53,12 @@ namespace SpecflowGroupExcercise.StepDefinitions
         public async Task ThenWhatIsLoremIpsumIsDisplayed(string text)
         {
             Assert.True(await _widget.IsElementVisible(text));
+        }
+
+        [Given(@"I am on elements page")]
+        public async Task GivenIAmOnElementsPage()
+        {
+            await _page.GotoAsync(_page.Url.AddRelativePath("/elements"));
         }
     }
 }

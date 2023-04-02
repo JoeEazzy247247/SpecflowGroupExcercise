@@ -1,5 +1,6 @@
 ﻿using BoDi;
 using Microsoft.Playwright;
+using SpecflowGroupExcercise.Configurations;
 using SpecflowGroupExcercise.Drivers;
 using TechTalk.SpecFlow;
 
@@ -27,7 +28,7 @@ namespace SpecflowGroupExcercise.Hooks
             {
                 ViewportSize = new ViewportSize { Height = 1080, Width = 1920 }
             });
-            await _page.GotoAsync("https://demoqa.com");
+            await _page.GotoAsync(ConfigurationFactory.GetRemoteAddress);
             _container.RegisterInstanceAs(_page);
         }
 
