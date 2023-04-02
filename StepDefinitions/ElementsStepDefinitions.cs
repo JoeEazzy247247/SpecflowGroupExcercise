@@ -2,6 +2,7 @@ using BoDi;
 using Microsoft.Playwright;
 using NUnit.Framework;
 using SpecflowGroupExcercise.Pages;
+using SpecflowGroupExcercise.Utilities;
 using System;
 using TechTalk.SpecFlow;
 
@@ -36,6 +37,12 @@ namespace SpecflowGroupExcercise.StepDefinitions
         public async Task ThenIAmOnElementsPage(string urlSlug)
         {
             Assert.True(await Task.FromResult(_page.Url.Contains(urlSlug)));
+        }
+
+        [Given(@"I am on elements page")]
+        public async Task GivenIAmOnElementsPage()
+        {
+            await _page.GotoAsync(_page.Url.AddRelativePath("/elements"));
         }
     }
 }

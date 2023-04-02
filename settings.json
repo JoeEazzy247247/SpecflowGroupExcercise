@@ -1,0 +1,10 @@
+{
+  "enviroment": {
+    "remoteAddress": "https://demoqa.com"
+  },
+  "timeouts": {
+    "ConditionTimeout": "00:00:30",
+    "PollingInterval": "00:00:03",
+    "RetryAttempts": "3"
+  }
+}
