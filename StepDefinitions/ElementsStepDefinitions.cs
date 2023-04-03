@@ -32,10 +32,17 @@ namespace SpecflowGroupExcercise.StepDefinitions
             await _hpage.ClickOption(elementAlias);
         }
 
+        [Scope(Tag = "FormTest")]
+        [When(@"I click (.*) menu")]
+        public async Task WhenIClickElementsFormMenu(string elementAlias)
+        {
+            await _hpage.ClickOption(elementAlias);
+        }
+
         [Then(@"I am on (.*) page")]
         public async Task ThenIAmOnElementsPage(string urlSlug)
         {
-            Assert.True(await Task.FromResult(_page.Url.Contains(urlSlug)));
+            Assert.True(await Task.FromResult(_page.Url.Contains(urlSlug.ToLower())));
         }
     }
 }
