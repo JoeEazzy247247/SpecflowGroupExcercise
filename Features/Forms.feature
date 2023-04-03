@@ -13,11 +13,11 @@ Scenario: Verify user is able to navigate to forms page on demoqa and fill pract
 		| TestUser{0} | QaUser{0} | authoTest{0}@abc.co.uk |
 	And I choose gender Male
 	And I enter mobile number 07799440954
-	And I enter date of birth 03 Apr 2023
+	And I enter date of birth 'Tuesday','April 4th, 2023'
 	#And I enter subject
 	And I choose hobbies
-	And I select picture
+	#And I select picture 
 	And I eneter current address
-	And I select state
+	And I select state 
 	And I select city
 	Then I click on submit btn

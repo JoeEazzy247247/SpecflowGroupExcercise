@@ -12,6 +12,7 @@ namespace SpecflowGroupExcercise.Pages
     public class PracticeFormPage
     {
         private IPage _page;
+        //Action action = new Action(_page);
         public PracticeFormPage(IObjectContainer objectContainer)
         {
             _page = objectContainer.Resolve<IPage>();
@@ -30,10 +31,30 @@ namespace SpecflowGroupExcercise.Pages
 
         ILocator DOBInputField => _page.Locator("//*[@id='dateOfBirthInput']");
 
-        ILocator EnterDOB()=> _page.Locator("//div[@aria-label='Choose Monday, April 3rd, 2023']");
-        //div[@aria-label='Choose Monday, April 3rd, 2023']
+        ILocator EnterDOB(string day, string date) => _page.GetByRole(AriaRole.Option, new() { Name = $"Choose {day}, {date}" });
 
-        ILocator submit => _page.Locator("#submit");
+        ILocator ChooseHobbies => _page.GetByText("Sports");
+        ILocator EnterCurrentAdd => _page.GetByPlaceholder("Current Address");
+        ILocator UploadPicture => _page.GetByLabel("Select picture");
+        //ILocator SelectState => _page.Locator("//*[@id='state']");
+        ILocator SelectState => _page.GetByText("NCR", new() { Exact = true });
+        //ILocator SelectCity => _page.Locator("//*[@id='city']");
+        ILocator SelectCity => _page.Locator("#city svg");
+
+
+
+    //    await page.GetByText("NCR", new () { Exact = true }).ClickAsync();
+
+    //await page.Locator("#city svg").ClickAsync();
+
+
+    //await page.GetByLabel("Select picture").SetInputFilesAsync(new[] { "VATImage.png" });
+    //await page.GetByLabel("Select picture").ClickAsync();
+    //await page.GetByPlaceholder("Current Address").ClickAsync();
+    //await page.GetByText("Sports").ClickAsync();
+
+    //*[@class='custom-control-label'][.='Sports']
+    ILocator submit => _page.Locator("#submit");
 
         //ILocator Output => _page.Locator("#output");
 
@@ -48,12 +69,25 @@ namespace SpecflowGroupExcercise.Pages
         }
         public async Task ClickGender() => await ChooseGender.ClickAsync();
         public async Task EnterMobileNumber(string Mobile) => await UserMobileField.FillAsync(Mobile);
-        public async Task EnterDOBOpt()
+        public async Task EnterDOBOpt(string day, string date)
         {
-            //await DOBInputField.ClearAsync();
-            await EnterDOB().ClickAsync();
+            //await _page.PauseAsync();
+            await DOBInputField.ClickAsync();
+            await EnterDOB(day, date).ClickAsync();
         }
-     
+        public async Task SelectHobbies() => await ChooseHobbies.ClickAsync();
+        public async Task EnterCAddress(string CAddress) => await EnterCurrentAdd.FillAsync(CAddress);
+        public async Task EnterPitcure() => await UploadPicture.SetInputFilesAsync(new[] { "VATImage.png" });
+        //FillAsync(pUpload);
+
+        public async Task EnterState() => await SelectState.ClickAsync();   
+        public async Task EnterCity() => await SelectCity.ClickAsync();   
+        public async Task ClickSubmitBtn() => await submit.ClickAsync();   
+
+
+        //await ClickHobbies().ChooseHobbies(hobbiesOption).ClickAsync();
+        // await _page.GetByText("Sports").ClickAsync();
+
         //await submit.ClickAsync();
         //public async Task<bool> IsOutPutDisplayed() => await Output.IsVisibleAsync();
     }

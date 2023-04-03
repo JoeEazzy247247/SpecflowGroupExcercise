@@ -127,7 +127,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And("I enter mobile number 07799440954", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 16
- testRunner.And("I enter date of birth 03 Apr 2023", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I enter date of birth \'Tuesday\',\'April 4th, 2023\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 18
  testRunner.And("I choose hobbies", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");

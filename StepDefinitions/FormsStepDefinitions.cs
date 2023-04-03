@@ -32,46 +32,29 @@ namespace SpecflowGroupExcercise.StepDefinitions
         [When(@"I enter mobile number ([^']*)")]
         public async Task WhenIEnterMobileNumber(string MobileOption) => await _practiceFormPage.EnterMobileNumber(MobileOption); 
 
-        [When(@"I enter date of birth ([^']*)")]
-        public async Task WhenIEnterDateOfBirthOct(string DobOption)
+        [When(@"I enter date of birth '([^']*)','([^']*)'")]
+        public async Task WhenIEnterDateOfBirthOct(string day, string DobOption)
         {
-            await _practiceFormPage.EnterDOBOpt();
+            await _practiceFormPage.EnterDOBOpt(day, DobOption);
         }
 
         [When(@"I choose hobbies")]
-        public async void WhenIChooseHobbies()
-        {
-            
-        }
+        public async Task WhenIChooseHobbies() => await _practiceFormPage.SelectHobbies();
 
-        [When(@"I select picture")]
-        public async Task WhenISelectPicture()
-        {
-            
-        }
+        [When(@"I select picture '([^']*)'")]
+        public async Task WhenISelectPicture() => await _practiceFormPage.EnterPitcure();
 
-        [When(@"I eneter current address")]
-        public async Task WhenIEneterCurrentAddress()
-        {
-            
-        }
+        [When(@"I eneter current ([^']*)")]
+        public async Task WhenIEneterCurrentAddress(string AddresAlias) => await _practiceFormPage.EnterCAddress(AddresAlias);
 
         [When(@"I select state")]
-        public void WhenISelectState()
-        {
-            
-        }
+        public async Task WhenISelectState() => await _practiceFormPage.EnterState();
+
 
         [When(@"I select city")]
-        public void WhenISelectCity()
-        {
-            
-        }
+        public async Task WhenISelectCity() => await _practiceFormPage.EnterCity();
 
         [Then(@"I click on submit btn")]
-        public void ThenIClickOnSubmitBtn()
-        {
-            
-        }
+        public async Task ThenIClickOnSubmitBtn() => await _practiceFormPage.ClickSubmitBtn();
     }
 }
