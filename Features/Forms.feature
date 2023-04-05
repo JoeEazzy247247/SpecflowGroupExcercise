@@ -14,7 +14,6 @@ Scenario: Verify user is able to navigate to forms page on demoqa and fill pract
 	And I choose gender Male
 	And I enter mobile number 07799440954
 	And I enter date of birth 'Tuesday','April 4th, 2023'
-	#And I enter subject
 	And I choose hobbies
 	And I select picture
 	And I eneter current address 24 UserQaTest Anenue
