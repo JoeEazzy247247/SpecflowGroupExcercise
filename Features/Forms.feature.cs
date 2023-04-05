@@ -136,7 +136,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And("I select picture", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 20
- testRunner.And("I eneter current address", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I eneter current address 24 UserQaTest Anenue", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 21
  testRunner.And("I select state", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -146,6 +146,9 @@ this.ScenarioInitialize(scenarioInfo);
 #line hidden
 #line 23
  testRunner.Then("I click on submit btn", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 24
+ testRunner.And("I click on close btn", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();

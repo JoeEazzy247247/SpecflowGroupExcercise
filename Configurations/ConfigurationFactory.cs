@@ -2,7 +2,7 @@
 
 namespace SpecflowGroupExcercise.Configurations
 {
-    public class ConfigurationFactory 
+    public class ConfigurationFactory
     {
         private static IConfigurationRoot ConfigurationRoot
         {
@@ -18,6 +18,8 @@ namespace SpecflowGroupExcercise.Configurations
 
         public static string GetRemoteAddress =>
             new string(ConfigurationRoot.GetSection("enviroment:remoteAddress").Value);
+
+        public static string FileUpload() => new string(ConfigurationRoot.GetSection("fileUpload:filePath").Value);
 
         public static TimeSpan GetTimeOut =>
              TimeSpan.Parse(ConfigurationRoot.GetSection("timeouts:ConditionTimeout").Value!);

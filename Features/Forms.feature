@@ -16,8 +16,9 @@ Scenario: Verify user is able to navigate to forms page on demoqa and fill pract
 	And I enter date of birth 'Tuesday','April 4th, 2023'
 	#And I enter subject
 	And I choose hobbies
-	#And I select picture 
-	And I eneter current address
-	And I select state 
+	And I select picture
+	And I eneter current address 24 UserQaTest Anenue
+	And I select state
 	And I select city
 	Then I click on submit btn
+	And I click on close btn
