@@ -46,7 +46,9 @@ namespace SpecflowGroupExcercise.Pages
             string LastName, string Email)
         {
             await FNameField(FName_Option).First.FillAsync(FirstName);
+
             await LNameField(LName_Option).FillAsync(LastName);
+
             await UserEmailField(Email_Option).FillAsync(Email);
         }
         public async Task ClickGender() => await ChooseGender.ClickAsync();
@@ -54,6 +56,7 @@ namespace SpecflowGroupExcercise.Pages
         public async Task EnterDOBOpt(string day, string date)
         {
             await DOBInputField.ClickAsync();
+
             await EnterDOB(day, date).ClickAsync();
         }
         public async Task SelectHobbies() => await ChooseHobbies.ClickAsync();
@@ -62,12 +65,13 @@ namespace SpecflowGroupExcercise.Pages
         public async Task EnterState()
         {
             await ClickStateField.ClickAsync();
+
             await SelectState.ClickAsync();
         }
         public async Task EnterCity()
         {
-
             await ClickCityField.ClickAsync();
+
             await SelectCity.ClickAsync();
         }
         public async Task ClickSubmitBtn() => await submit.ClickAsync();
