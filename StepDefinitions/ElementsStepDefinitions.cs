@@ -15,6 +15,7 @@ namespace SpecflowGroupExcercise.StepDefinitions
         private TextBoxPage _tpage;
         private IPage _page;
         private WidgetsPage _widget;    
+
         public ElementsStepDefinitions(IObjectContainer objectContainer)
         {
             _hpage = objectContainer.Resolve<HomePage>();
@@ -39,6 +40,13 @@ namespace SpecflowGroupExcercise.StepDefinitions
         [When(@"I click (.*) menu")]
         public async Task WhenIClickElementss(string elementAlias)
 
+        {
+            await _hpage.ClickOption(elementAlias);
+        }
+
+        [Scope(Tag = "FormTest")]
+        [When(@"I click (.*) menu")]
+        public async Task WhenIClickElementsFormMenu(string elementAlias)
         {
             await _hpage.ClickOption(elementAlias);
         }
