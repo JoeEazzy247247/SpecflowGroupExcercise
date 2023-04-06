@@ -74,14 +74,14 @@ namespace SpecflowGroupExcercise.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Summon all different Alerts")]
+        [NUnit.Framework.DescriptionAttribute("Summon all Alerts")]
         [NUnit.Framework.CategoryAttribute("AlertsTest")]
-        public virtual void SummonAllDifferentAlerts()
+        public virtual void SummonAllAlerts()
         {
             string[] tagsOfScenario = new string[] {
                     "AlertsTest"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Summon all different Alerts", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Summon all Alerts", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 5
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
