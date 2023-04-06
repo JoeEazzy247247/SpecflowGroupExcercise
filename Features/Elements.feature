@@ -10,4 +10,3 @@ Scenario: Fill Element page form
 	Then I am on Text-Box page
 	When I complete the following form
 	Then form is completed
-
