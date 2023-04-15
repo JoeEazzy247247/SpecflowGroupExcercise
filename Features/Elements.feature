@@ -1,6 +1,5 @@
 ﻿Feature: Elements
 
-
 @ElementTest
 Scenario: Fill Element page form
 	Given I am on demoqa site
