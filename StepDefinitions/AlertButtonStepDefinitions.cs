@@ -21,7 +21,6 @@ namespace SpecflowGroupExcercise.StepDefinitions
         public async Task WhenIConfirmTheFirstAlertButton()
         {
             await _apage.ClickAlertBtn();
-            Thread.Sleep(3000);
         }
     }
 }
