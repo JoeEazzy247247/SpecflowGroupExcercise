@@ -1,6 +1,5 @@
 ﻿Feature: Elements
 
-
 @ElementTest
 Scenario: Fill Element page form
 	Given I am on demoqa site
@@ -10,4 +9,3 @@ Scenario: Fill Element page form
 	Then I am on Text-Box page
 	When I complete the following form
 	Then form is completed
-

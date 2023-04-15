@@ -9,27 +9,19 @@ namespace SpecflowGroupExcercise.StepDefinitions
     [Binding]
     public class AlertButtonStepDefinitions
     {
-
         private AlertsPage _apage;
-        private HomePage _hpage;
         private IPage _page;
         public AlertButtonStepDefinitions(IObjectContainer objectContainer)
         {
             _page = objectContainer.Resolve<IPage>();
-            _hpage = objectContainer.Resolve<HomePage>();
             _apage = objectContainer.Resolve<AlertsPage>();
         }
 
-        [When(@"I confirm all the Alerts")]
-        public async Task WhenIConfirmAllTheAlerts(string alert0)
+        [Then(@"I confirm the first Alert button")]
+        public async Task WhenIConfirmTheFirstAlertButton()
         {
-            
-        }
-
-        [Then(@"Alert test is complete")]
-        public async Task ThenAlertTestIsComplete()
-        {
-            
+            await _apage.ClickAlertBtn();
+            Thread.Sleep(3000);
         }
     }
 }

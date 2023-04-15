@@ -3,9 +3,6 @@ using Microsoft.Playwright;
 using NUnit.Framework;
 using SpecflowGroupExcercise.Pages;
 using SpecflowGroupExcercise.Utilities;
-using System;
-using TechTalk.SpecFlow;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace SpecflowGroupExcercise.StepDefinitions
 {
@@ -38,6 +35,13 @@ namespace SpecflowGroupExcercise.StepDefinitions
             await _hpage.ClickOption(elementAlias);
         }
 
+        [Scope(Tag = "AlertsTest")]
+        [When(@"I click (.*) menu")]
+        public async Task WhenIClickAlerts(string elementAlias)
+        {
+            await _apage.ClickAlerts(elementAlias);
+        }
+
         [Scope(Tag = "WidgetsTest")]
         [When(@"I click (.*) menu")]
         public async Task WhenIClickElementss(string elementAlias)
@@ -64,7 +68,6 @@ namespace SpecflowGroupExcercise.StepDefinitions
             await _page.GotoAsync(_page.Url.AddRelativePath("/elements"));
         }
 
-        //Alerts Step Definitions
         [Given(@"I land on (.*) site")]
         public async Task GivenILandOnDemoqaSite(string urlSlug)
         {
@@ -81,22 +84,12 @@ namespace SpecflowGroupExcercise.StepDefinitions
         public async Task ThenILandOnAlertsFrameWindowsPage(string alertsWindows)
         {
             Assert.True(await _apage.IsAlertTextVisible(alertsWindows));
-            //Assert.True(await Task.FromResult(_page.Url.Contains(urlSlug.ToLower())));
-            //await _page.GotoAsync(_page.Url.AddRelativePath("/alertsWindows"));
-        }
-
-        [When(@"I select (.*) menu")]
-        public async Task WhenISelectAlertsMenu(string alerts)
-        {
-            Assert.True(await _apage.IsAlertsVisible(alerts));
-            //await _hpage.ClickOption(elementAlias);
         }
 
         [Then(@"I land on (.*) webpage")]
         public async Task ThenILandOnAlertsWebpage(string urlSlug)
         {
-            await _page.GotoAsync(_page.Url.AddRelativePath("/alerts"));
-            //Assert.True(await Task.FromResult(_page.Url.Contains(urlSlug.ToLower())));
+            Assert.True(await Task.FromResult(_page.Url.Contains(urlSlug.ToLower())));
         }
     }
 }

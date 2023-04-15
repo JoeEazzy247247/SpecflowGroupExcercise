@@ -19,7 +19,6 @@ namespace SpecflowGroupExcercise.Pages
 
         ILocator elements(string option) => _page.GetByText($"{option}");
 
-        //public async Task ClickOption(string option) => await elements(option).ClickElement();
         public async Task ClickOption(string option) => await _page.ClickByTextAsync(option);
     }
 }
