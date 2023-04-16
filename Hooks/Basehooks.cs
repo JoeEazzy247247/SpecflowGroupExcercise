@@ -18,17 +18,24 @@ namespace SpecflowGroupExcercise.Hooks
         public async Task BeforeScenarioWithTag()
         {
             _playwright = await Playwright.CreateAsync();
-            _browser = await _playwright.Chromium.LaunchAsync(new BrowserTypeLaunchOptions
+
+            var launchOptions = new BrowserTypeLaunchOptions
             {
                 Headless = false,
                 Channel = "chrome",
                 SlowMo = 10
-            });
-            _page = await _browser.NewPageAsync(new BrowserNewPageOptions
+            };
+            _browser = await _playwright.Chromium.LaunchAsync(launchOptions);
+
+            var pageOptions = new BrowserNewPageOptions
             {
                 ViewportSize = new ViewportSize { Height = 1080, Width = 1920 }
-            });
-            await _page.GotoAsync(ConfigurationFactory.GetRemoteAddress);
+            };
+            _page = await _browser.NewPageAsync(pageOptions);
+
+            var remoteAddress = ConfigurationFactory.GetRemoteAddress;
+            await _page.GotoAsync(remoteAddress);
+
             _container.RegisterInstanceAs(_page);
         }
 
