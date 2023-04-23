@@ -9,4 +9,3 @@ Scenario: Fill Element page form
 	When I click Accordian menu
 	Then I am on Accordian page
 	Then What is Lorem Ipsum? is displayed
-
